@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!ELEMENT tvshows ANY>
+
+<!ELEMENT AdvertisingAgency EMPTY>
+<!ATTLIST AdvertisingAgency name CDATA #IMPLIED>
+<!ATTLIST AdvertisingAgency advAgencyID ID #REQUIRED>
+
+<!ELEMENT Brand EMPTY>
+<!ATTLIST Brand name CDATA #IMPLIED>
+<!ATTLIST Brand brandID ID #REQUIRED>
+
+<!ELEMENT BrandRef EMPTY>
+<!ATTLIST BrandRef brandID IDREF #REQUIRED>
+
+<!ELEMENT Price (Currency, Value)>
+
+<!ELEMENT Currency (#PCDATA)>
+
+<!ELEMENT Value (#PCDATA)>
+
+<!ELEMENT Type (Category+, Subcategory*)> <!-- Specifies type of a product -->
+
+<!ELEMENT Category EMPTY>
+<!ATTLIST Category categoryName CDATA "general">
+
+<!ELEMENT Subcategory EMPTY>
+<!ATTLIST Subcategory subcategoryName CDATA #REQUIRED>
+
+<!ELEMENT Product (BrandRef+, Price, Type)> <!-- A product may be a result of a brand collaboration -->
+<!ATTLIST Product prodName CDATA #IMPLIED>
+<!ATTLIST Product prodID ID #REQUIRED>
+
+<!ELEMENT Advertisement EMPTY>
+<!ATTLIST Advertisement adID ID #REQUIRED>
+<!ATTLIST Advertisement adDuration CDATA #REQUIRED>
+<!ATTLIST Advertisement adFee CDATA "0">
+<!ATTLIST Advertisement adAgency IDREF #REQUIRED>
+<!ATTLIST Advertisement adProduct IDREF #REQUIRED>
+
+<!ELEMENT MediaCompany EMPTY>
+<!ATTLIST MediaCompany mcName CDATA #IMPLIED>
+<!ATTLIST MediaCompany mcID ID #REQUIRED>
+
+<!ELEMENT MediaConglomerate (MediaCompanyRef, MediaCompanyRef, MediaCompanyRef, MediaCompanyRef, MediaCompanyRef+)> <!-- A Media Conglomerate owns at least 5 Media Companies -->
+<!ATTLIST MediaConglomerate mcgName CDATA #IMPLIED>
+<!ATTLIST MediaConglomerate mcgID ID #REQUIRED>
+
+<!ELEMENT MediaCompanyRef EMPTY>
+<!ATTLIST MediaCompanyRef medCompID IDREF #REQUIRED>
+
+<!ELEMENT MediaConglomerateRef EMPTY>
+<!ATTLIST MediaConglomerateRef medCongID IDREF #REQUIRED>
+
+<!-- <!ELEMENT OTTplatform ((MediaCompanyRef | MediaConglomerateRef)+)>
+<!ATTLIST OTTplatform OTTname CDATA #IMPLIED>
+<!ATTLIST OTTplatform OTTid ID #REQUIRED> -->
+
+<!ELEMENT TVChannel ((MediaCompanyRef | MediaConglomerateRef)+)>
+<!ATTLIST TVChannel channelName CDATA #IMPLIED>
+<!ATTLIST TVChannel channelID ID #REQUIRED>
+
+<!ELEMENT FirstName (#PCDATA)>
+
+<!ELEMENT MiddleName (#PCDATA)>
+
+<!ELEMENT LastName (#PCDATA)>
+
+<!ELEMENT Name (FirstName, MiddleName*, LastName)>
+<!ATTLIST Name nameType (official|nickname|titular|other) "official">
+
+<!ELEMENT Phone EMPTY>
+<!ATTLIST Phone phoneNumber CDATA #REQUIRED>
+<!ATTLIST Phone areaCode CDATA "+91">
+
+<!ELEMENT Email (#PCDATA)>
+
+<!ELEMENT ContactInfo (Phone+, Email+)>
+<!ATTLIST ContactInfo ciType (primary|secondary) "secondary">
+
+<!ELEMENT AddressLine (#PCDATA)>
+
+<!ELEMENT Landmark (#PCDATA)>
+
+<!ELEMENT Address (AddressLine+, Landmark*)>
+<!ATTLIST Address city CDATA "Chennai">
+<!ATTLIST Address state CDATA "TamilNadu">
+<!ATTLIST Address country CDATA "India">
+<!ATTLIST Address pinCode CDATA "600036">
+
+<!-- A Person does not have to be a human here -->
+<!-- A Person cannot be inanimate -->
+<!ELEMENT Person (Name+, ContactInfo*, Address*)>
+<!ATTLIST Person personID ID #REQUIRED>
+<!ATTLIST Person age CDATA "0">
+<!ATTLIST Person sex (M|F) #IMPLIED>
+
+<!ELEMENT PersonRef EMPTY>
+<!ATTLIST PersonRef personID IDREF #REQUIRED>
+
+<!ELEMENT Role (#PCDATA | CharacterRef | ShowRefs | PersonRef)* >
+
+<!ELEMENT PlayedBy EMPTY> <!-- Specifies actor of a character -->
+<!ATTLIST PlayedBy actorPlayingRole IDREF #REQUIRED>
+<!ATTLIST PlayedBy status (current | past) "current">
+
+<!ELEMENT ShowRefs EMPTY>
+<!ATTLIST ShowRefs showIDs IDREFS #REQUIRED>
+
+<!-- A Character can either be a person or an inanimate object identified by a name -->
+<!-- Characters only exist in the fictional universe; they are associated with at least one show -->
+<!-- A Character may not be played by any actor (e.g.) cartoon characters, characters which only get mentioned -->
+<!ELEMENT Character ((Name+ | PersonRef), Role+, PlayedBy*, ShowRefs)> <!-- A character may have multiple roles in multiple situations -->
+<!ATTLIST Character charID ID #REQUIRED>
+
+<!ELEMENT CharacterRef ANY>
+<!ATTLIST CharacterRef charRef IDREF #REQUIRED>
+
+<!-- An Actor is a Person who has acted as at least one Character -->
+<!ELEMENT Actor (CharacterRef+)>
+<!ATTLIST Actor personID IDREF #REQUIRED>
+<!ATTLIST Actor actorID ID #REQUIRED>
+
+<!ELEMENT ProductionHouse (ContactInfo+, Address+)>
+<!ATTLIST ProductionHouse phID ID #REQUIRED>
+<!ATTLIST ProductionHouse phName CDATA #IMPLIED>
+
+<!ELEMENT Show (CharacterRef+)>
+<!ATTLIST Show showName CDATA #IMPLIED>
+<!ATTLIST Show showID ID #REQUIRED>
+<!ATTLIST Show language CDATA "Tamil">
+<!ATTLIST Show episodeCount CDATA "1">
+<!ATTLIST Show phID IDREF #REQUIRED> <!-- to refer to the production house which bankrolls the show -->
+
+<!ELEMENT SequelPrequelSpinoff EMPTY>
+<!ATTLIST SequelPrequelSpinoff showID IDREF #REQUIRED>
+<!ATTLIST SequelPrequelSpinoff relatedShowID IDREF #REQUIRED>
+<!ATTLIST SequelPrequelSpinoff relationship (prequel|sequel|spinoff) "spinoff">
+
+<!ELEMENT Telecast EMPTY>
+<!ATTLIST Telecast showID IDREF #REQUIRED>
+<!ATTLIST Telecast episodeNumber CDATA #REQUIRED>
+<!ATTLIST Telecast telecastType (original | repeat | premiere) "original">
+<!ATTLIST Telecast duration CDATA #REQUIRED>
+
+<!ELEMENT Slot ((Telecast | Advertisement)+)>
+<!ATTLIST Slot channelID IDREF #REQUIRED>
+<!ATTLIST Slot slotID ID #REQUIRED>
+<!ATTLIST Slot date CDATA #REQUIRED>
+<!ATTLIST Slot startTime CDATA #REQUIRED>
+<!ATTLIST Slot endTime CDATA #REQUIRED>
+<!ATTLIST Slot maxViewership CDATA "0">

@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<!DOCTYPE tvshows SYSTEM "tvshows.dtd">
+
+<tvshows>
+    <!-- Media Companies -->
+    <MediaCompany mcID="MC029" mcName="Kayal Works" />
+    <MediaCompany mcID="MC025" mcName="Tulasi Productions" />
+    <MediaCompany mcID="MC019" mcName="Thaazhampoo Productions" />
+    <MediaCompany mcID="MC129" mcName="Arasi Network" />
+    <MediaCompany mcID="MC912" mcName="Kannagi Works" />
+    <MediaCompany mcID="MC009" mcName="Murugan Network" />
+
+    <MediaCompany mcID="MC201" mcName="Star Entertainment" />
+    <MediaCompany mcID="MC202" mcName="Star Movies" />
+    <MediaCompany mcID="MC203" mcName="Star Sport" />
+    <MediaCompany mcID="MC204" mcName="Star Kids" />
+    <MediaCompany mcID="MC205" mcName="Star Infotainment" />
+    <MediaCompany mcID="MC206" mcName="NDTV" />
+
+
+    <!-- Media Conglomerates -->
+    <MediaConglomerate mcgID="MG289" mcgName="Sooriyan Network">
+        <MediaCompanyRef medCompID="MC029" />
+        <MediaCompanyRef medCompID="MC025" />
+        <MediaCompanyRef medCompID="MC019" />
+        <MediaCompanyRef medCompID="MC129" />
+        <MediaCompanyRef medCompID="MC912" />
+        <MediaCompanyRef medCompID="MC009" />
+    </MediaConglomerate>
+
+    <MediaConglomerate mcgID="MG200" mcgName="Star India">
+        <MediaCompanyRef medCompID="MC201" />
+        <MediaCompanyRef medCompID="MC202" />
+        <MediaCompanyRef medCompID="MC203" />
+        <MediaCompanyRef medCompID="MC204" />
+        <MediaCompanyRef medCompID="MC205" />
+    </MediaConglomerate>
+
+
+    <!-- TV Channels -->
+    <TVChannel channelID="CH498" channelName="Sooriyan TV">
+        <MediaConglomerateRef medCongID="MG289" />
+    </TVChannel>
+
+    <TVChannel channelID="CH499" channelName="Nilavu TV">
+        <MediaConglomerateRef medCongID="MG289" />
+    </TVChannel>
+
+    <TVChannel channelID="CH301" channelName="StarPlus">
+        <MediaCompanyRef medCompID="MC201" />
+    </TVChannel>
+
+    <TVChannel channelID="CH302" channelName="Star Bharat">
+        <MediaCompanyRef medCompID="MC201" />
+    </TVChannel>
+
+    <TVChannel channelID="CH303" channelName="Star Utsav">
+        <MediaCompanyRef medCompID="MC201" />
+    </TVChannel>
+
+    <TVChannel channelID="CH304" channelName="Star World">
+        <MediaCompanyRef medCompID="MC201" />
+    </TVChannel>
+
+    <TVChannel channelID="CH305" channelName="Star Gold">
+        <MediaCompanyRef medCompID="MC202" />
+    </TVChannel>
+
+    <TVChannel channelID="CH306" channelName="Star Movies">
+        <MediaCompanyRef medCompID="MC202" />
+    </TVChannel>
+
+    <TVChannel channelID="CH307" channelName="Star Sports 1 Hindi">
+        <MediaCompanyRef medCompID="MC203" />
+    </TVChannel>
+
+    <TVChannel channelID="CH308" channelName="Star Sports 1">
+        <MediaCompanyRef medCompID="MC203" />
+    </TVChannel>
+
+    <TVChannel channelID="CH309" channelName="Star Sports First">
+        <MediaCompanyRef medCompID="MC203" />
+    </TVChannel>
+
+    <TVChannel channelID="CH310" channelName="Star Sports 2">
+        <MediaCompanyRef medCompID="MC203" />
+    </TVChannel>
+
+    <TVChannel channelID="CH311" channelName="Baby TV">
+        <MediaCompanyRef medCompID="MC204" />
+    </TVChannel>
+
+    <TVChannel channelID="CH312" channelName="National Geographic India">
+        <MediaCompanyRef medCompID="MC205" />
+    </TVChannel>
+
+    <TVChannel channelID="CH313" channelName="Nat Geo Wild India">
+        <MediaCompanyRef medCompID="MC205" />
+    </TVChannel>
+
+    <TVChannel channelID="CH314" channelName="NDTV 24x7">
+        <MediaCompanyRef medCompID="MC206" />
+    </TVChannel>
+
+    <TVChannel channelID="CH315" channelName="NDTV India ">
+        <MediaCompanyRef medCompID="MC206" />
+    </TVChannel>
+
+    <TVChannel channelID="CH316" channelName="NDTV Prime">
+        <MediaCompanyRef medCompID="MC206" />
+    </TVChannel>
+
+
+    <!-- Advertising Agencies -->
+    <AdvertisingAgency name="SunMoon Advertising Agency" advAgencyID="ADVAG321" />
+    <AdvertisingAgency name="Stars Advertising Agency" advAgencyID="ADVAG322" />
+    <AdvertisingAgency name="Good Advertising Agency" advAgencyID="ADVAG323" />
+    <AdvertisingAgency name="Bad Advertising Agency" advAgencyID="ADVAG324" />
+    <AdvertisingAgency name="Ugly Advertising Agency" advAgencyID="ADVAG325" />
+    <AdvertisingAgency name="Beautiful Advertising Agency" advAgencyID="ADVAG326" />
+    <AdvertisingAgency name="StarBright Advertising Agency" advAgencyID="ADVAG327" />
+    <AdvertisingAgency name="Kryztal Advertising Agency" advAgencyID="ADVAG328" />
+
+
+    <!-- Brands -->
+    <Brand name="banana" brandID="BRD321" />
+    <Brand name="pineapple" brandID="BRD322" />
+    <Brand name="toyola cars" brandID="BRD323" />
+    <Brand name="edison cars" brandID="BRD324" />
+
+
+    <!-- Products -->
+    <Product prodName="myPhone13ProMaxUltra" prodID="PRD321">
+        <BrandRef brandID="BRD321" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>1000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="electronics" />
+            <Subcategory subcategoryName="mobile" />
+        </Type>
+    </Product>
+
+    <Product prodName="myPhone14" prodID="PRD322">
+        <BrandRef brandID="BRD321" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>2000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="electronics" />
+            <Subcategory subcategoryName="mobile" />
+        </Type>
+    </Product>
+
+    <Product prodName="myPhone14Mini" prodID="PRD323">
+        <BrandRef brandID="BRD321" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>3000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="electronics" />
+            <Subcategory subcategoryName="mobile" />
+        </Type>
+    </Product>
+
+    <Product prodName="myWatch" prodID="PRD324">
+        <BrandRef brandID="BRD322" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>30000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="electronics" />
+            <Subcategory subcategoryName="smartwatch" />
+        </Type>
+    </Product>
+
+    <Product prodName="toyola innola" prodID="PRD325">
+        <BrandRef brandID="BRD323" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>3000000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="vehicles" />
+            <Subcategory subcategoryName="SUV" />
+        </Type>
+    </Product>
+
+    <Product prodName="toyola corollary" prodID="PRD326">
+        <BrandRef brandID="BRD323" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>2000000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="vehicles" />
+            <Subcategory subcategoryName="Sedan" />
+        </Type>
+    </Product>
+
+    <Product prodName="edison XAEA" prodID="PRD327">
+        <BrandRef brandID="BRD324" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>20000000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="vehicles" />
+            <Subcategory subcategoryName="Hatchback" />
+        </Type>
+    </Product>
+
+    <Product prodName="edison XAEB" prodID="PRD328">
+        <BrandRef brandID="BRD324" />
+        <Price>
+            <Currency>INR</Currency>
+            <Value>30000000</Value>
+        </Price>
+        <Type>
+            <Category categoryName="vehicles" />
+            <Subcategory subcategoryName="Sedan" />
+        </Type>
+    </Product>
+
+
+    <!-- People -->
+    <Person personID="PRJO5" age="52" sex="M">
+        <Name nameType="official">
+            <FirstName>Jim</FirstName>
+            <LastName>Okay</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PRTT4" age="48" sex="F">
+        <Name nameType="official">
+            <FirstName>Tiffani</FirstName>
+            <LastName>TieSang</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PRMB3" age="32" sex="M">
+        <Name nameType="official">
+            <FirstName>Matte</FirstName>
+            <LastName>Boomer</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PRPB4" age="40" sex="M">
+        <Name nameType="official">
+            <FirstName>Peter</FirstName>
+            <LastName>Burkha</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PREB3" age="39" sex="F">
+        <Name nameType="official">
+            <FirstName>Ellie</FirstName>
+            <LastName>Burkha</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PRNC2" age="28" sex="M">
+        <Name nameType="official">
+            <FirstName>Neal</FirstName>
+            <LastName>Carefree</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PRNF2" age="25" sex="M">
+        <Name nameType="official">
+            <FirstName>Neer</FirstName>
+            <LastName>Carefake</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="PREM1">
+        <Name>
+            <FirstName>Ellen</FirstName>
+            <LastName>Mask</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="9424242042" />
+            <Email>ellen_mask@attherate.com</Email>
+        </ContactInfo>
+        <Address city="Chennai" state="Tamil Nadu" country="India" pinCode="600036">
+            <AddressLine>107,A Hostel, IIT Madras</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PREM2">
+        <Name>
+            <FirstName>Allen</FirstName>
+            <LastName>Mosk</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="9424242043" />
+            <Email>allen_mosk@attherate.com</Email>
+        </ContactInfo>
+        <Address city="Chennai" state="Tamil Nadu" country="India" pinCode="600036">
+            <AddressLine>108,A Hostel, IIT Madras</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PREM3">
+        <Name>
+            <FirstName>Alven</FirstName>
+            <LastName>Mysk</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="9424242043" />
+            <Email>alven_mysk@attherate.com</Email>
+        </ContactInfo>
+        <Address city="Braine l Alleud" state="Tamil Nadu" country="India" pinCode="600036">
+            <AddressLine>109,B Hostel, IIT Madras</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PHT1">
+        <Name>
+            <FirstName>Captain</FirstName>
+            <LastName>Haddock</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="9424242043" />
+            <Email>haddock@tintin.com</Email>
+        </ContactInfo>
+        <Address city="Marlinspike" state="Wallonia" country="Belgium" pinCode="123345">
+            <AddressLine>Marlinspike Hall</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PHT2">
+        <Name>
+            <FirstName>Tin</FirstName>
+            <LastName>Tin</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="9424242044" />
+            <Email>tintin@tintin.com</Email>
+        </ContactInfo>
+        <Address city="Marlinspike" state="Wallonia" country="Belgium" pinCode="142345">
+            <AddressLine>Marlinspike Hall</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PHT3">
+        <Name>
+            <FirstName>Cuthbert</FirstName>
+            <LastName>Calculus</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="9424242045" />
+            <Email>calculus@tintin.com</Email>
+        </ContactInfo>
+        <Address city="Marlinspike" state="Wallonia" country="Belgium" pinCode="123445">
+            <AddressLine>Marlinspike Hall</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PHT4">
+        <Name>
+            <FirstName>Stephen</FirstName>
+            <LastName>Phelps</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="8136398680" />
+            <Email>lorem@hotmail.ed</Email>
+        </ContactInfo>
+        <Address city="Weland" state="Loreto" country="United Kingdom" pinCode="233245">
+            <AddressLine>P.O. Box 613, 8304 Lorem Rd.</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="PHT5">
+        <Name>
+            <FirstName>Dorian</FirstName>
+            <LastName>Torres</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="4613936467" />
+            <Email>suspendisse.eleifend@yahoo.couk</Email>
+        </ContactInfo>
+        <Address city="Antonia" state="Sindh" country="Belgium" pinCode="145645">
+            <AddressLine>Ap #809-5320 Urna Street</AddressLine>
+        </Address>
+    </Person>
+    <Person personID="DT10">
+        <Name>
+            <FirstName>Daenarys</FirstName>
+            <LastName>Targaryen</LastName>
+        </Name>
+
+    </Person>
+
+    <Person personID="JS20">
+        <Name>
+            <FirstName>Jon</FirstName>
+            <LastName>Snow</LastName>
+        </Name>
+    </Person>
+    <Person personID="SS30">
+        <Name>
+            <FirstName>Sansa</FirstName>
+            <LastName>Stark</LastName>
+        </Name>
+    </Person>
+
+    <Person personID="EC24">
+        <Name>
+            <FirstName>Emilia</FirstName>
+            <LastName>Clarke</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="4613936497" />
+            <Email>emiliac@yahoo.com</Email>
+        </ContactInfo>
+        <Address city="London" state="petan" country="England" pinCode="546554">
+            <AddressLine>lane4 ,Hno 47 ,street 7, petan</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="KT72">
+        <Name>
+            <FirstName>KIT</FirstName>
+            <LastName>Penk</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="4613579667" />
+            <Email>kitp88@yahoo.com</Email>
+        </ContactInfo>
+        <Address city="Manchestar" state="Wales" country="Britain" pinCode="684465">
+            <AddressLine>mad street, plot 7 , Manchestar</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="ST30">
+        <Name>
+            <FirstName>Sophie</FirstName>
+            <LastName>Turner</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="3548354535" />
+            <Email>SSand5@gmail.com</Email>
+        </ContactInfo>
+        <Address city="Nothamp" state="lanchestar" country="France" pinCode="642186">
+            <AddressLine>Hno 4-7/c, Pekker colony, west nothamp</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="BC90">
+        <Name>
+            <FirstName>Brain</FirstName>
+            <LastName>Crayon</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="3535954535" />
+            <Email>Brayan.crayon@gmail.com</Email>
+        </ContactInfo>
+        <Address city="Los Santos" state="California" country="USA" pinCode="245344">
+            <AddressLine>jane street, gold road,420 bilgiton apartment</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="AG30">
+        <Name>
+            <FirstName>Ann</FirstName>
+            <LastName>gun</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="3564654535" />
+            <Email>annnngg90@gmail.com</Email>
+        </ContactInfo>
+        <Address city="cleveland" state="Ohio" country="USA" pinCode="886246">
+            <AddressLine>Hn0- 5/10, old town road, santigo</AddressLine>
+        </Address>
+    </Person>
+
+    <Person personID="DN57">
+        <Name>
+            <FirstName>Den</FirstName>
+            <LastName>Nord</LastName>
+        </Name>
+        <ContactInfo>
+            <Phone phoneNumber="78956321" />
+            <Email>Hanko78@hotmail.com</Email>
+        </ContactInfo>
+        <Address city="bend" state="Indiana" country="USA" pinCode="579864">
+            <AddressLine>landig hills, westwood street, plotno 32</AddressLine>
+        </Address>
+    </Person>
+
+    <!-- Actors -->
+    <Actor personID="PRJO5" actorID="ACTJO1">
+        <CharacterRef charRef="BCPB1" />
+    </Actor>
+
+    <Actor personID="PRTT4" actorID="ACTTT1">
+        <CharacterRef charRef="BCEB1" />
+    </Actor>
+
+    <Actor personID="PRMB3" actorID="ACTMB1">
+        <CharacterRef charRef="BCNC1" />
+    </Actor>
+
+    <Actor personID="PREM1" actorID="ACTT1">
+        <CharacterRef charRef="BCTT1" />
+    </Actor>
+
+    <Actor personID="PREM2" actorID="ACTT2">
+        <CharacterRef charRef="BCTT2" />
+    </Actor>
+
+    <Actor personID="PREM3" actorID="ACTT3">
+        <CharacterRef charRef="BCTT3" />
+    </Actor>
+
+    <Actor personID="EC24" actorID="ACTG1">
+        <CharacterRef charRef="CDT10" />
+    </Actor>
+
+    <Actor personID="KT72" actorID="ACTG2">
+        <CharacterRef charRef="CJS20" />
+    </Actor>
+
+    <Actor personID="ST30" actorID="ACTG3">
+        <CharacterRef charRef="CSS30" />
+    </Actor>
+
+    <Actor personID="BC90" actorID="ACTBB1">
+        <CharacterRef charRef="WW99" />
+    </Actor>
+
+    <Actor personID="AG30" actorID="ACTBB2">
+        <CharacterRef charRef="SW84" />
+    </Actor>
+
+    <Actor personID="DN57" actorID="ACTBB3">
+        <CharacterRef charRef="HNK77" />
+    </Actor>
+
+
+    <!-- Production Houses -->
+    <ProductionHouse phID="PH012" phName="Mugizh Productions">
+        <ContactInfo>
+            <Phone phoneNumber="8787633442" />
+            <Email>mugizh_prods@gmayil.com</Email>
+        </ContactInfo>
+        <Address>
+            <AddressLine>No: 71 17th fllor</AddressLine>
+            <AddressLine>Vela Yeri</AddressLine>
+        </Address>
+    </ProductionHouse>
+
+    <ProductionHouse phID="PH013" phName="Dharma Productions">
+        <ContactInfo>
+            <Phone phoneNumber="8956824862" />
+            <Email>dharma@gmil.com</Email>
+        </ContactInfo>
+        <Address>
+            <AddressLine>Mumbai, Maharashtra, India</AddressLine>
+        </Address>
+    </ProductionHouse>
+
+
+    <!-- Characters -->
+    <Character charID="BCPB1">
+        <PersonRef personID="PRPB4" />
+        <Role>Main character</Role>
+        <Role>FBI agent</Role>
+        <Role>
+            Husband of
+            <CharacterRef charRef="BCEB1" />
+        </Role>
+        <PlayedBy actorPlayingRole="ACTJO1" />
+        <ShowRefs showIDs="BC321 YC321 FRIENDS1 FRIENDS2" />
+    </Character>
+
+    <Character charID="BCEB1">
+        <PersonRef personID="PREB3" />
+        <Role>Main character</Role>
+        <Role>Event planner</Role>
+        <Role>
+            Wife of
+            <CharacterRef charRef="BCPB1">Peter Burkha</CharacterRef>
+        </Role>
+        <PlayedBy actorPlayingRole="ACTTT1" />
+        <ShowRefs showIDs="BC321 YC321 FRIENDS1 FRIENDS2" />
+    </Character>
+
+    <Character charID="BCNC1">
+        <PersonRef personID="PRNC2" />
+        <Role>Main character</Role>
+        <Role>Skilled Forger</Role>
+        <Role>Thief</Role>
+        <Role>FBI consultant</Role>
+        <PlayedBy actorPlayingRole="ACTMB1" />
+        <ShowRefs showIDs="BC321 YC321" />
+    </Character>
+
+    <Character charID="BCNF1">
+        <PersonRef personID="PRNF2" />
+        <Role>Cameo appearance</Role>
+        <Role>
+            Doppelganger of
+            <CharacterRef charRef="PRNC2" />
+        </Role>
+        <Role>Fraud</Role>
+        <Role>
+            Pretends to be
+            <CharacterRef charRef="PRNC2" />
+            and kidnaps
+            <CharacterRef charRef="BCEB1" />
+        </Role>
+        <PlayedBy actorPlayingRole="ACTMB1" />
+        <ShowRefs showIDs="BC321 YC321" />
+    </Character>
+
+    <Character charID="BCTT1">
+        <PersonRef personID="PHT1" />
+        <Role>Captain of a boat</Role>
+        <PlayedBy actorPlayingRole="ACTT1" />
+        <ShowRefs showIDs="TINTIN1 TINTIN2 FRIENDS1 FRIENDS2" />
+    </Character>
+
+    <Character charID="BCTT2">
+        <PersonRef personID="PHT2" />
+        <Role>Main Character</Role>
+        <Role>Reporter</Role>
+        <PlayedBy actorPlayingRole="ACTT2" />
+        <ShowRefs showIDs="TINTIN1 TINTIN2" />
+    </Character>
+
+    <Character charID="BCTT3">
+        <PersonRef personID="PHT3" />
+        <Role>Inventor</Role>
+        <PlayedBy actorPlayingRole="ACTT3" />
+        <ShowRefs showIDs="TINTIN1 TINTIN2" />
+    </Character>
+
+    <Character charID="CDT10">
+        <PersonRef personID="DT10" />
+        <Role>Main character</Role>
+        <Role>Princess to the throne</Role>
+        <PlayedBy actorPlayingRole="ACTG1" />
+        <ShowRefs showIDs="GOT1" />
+    </Character>
+
+    <Character charID="CJS20">
+        <PersonRef personID="JS20" />
+        <Role>Main character</Role>
+        <Role>Night's Watch</Role>
+        <PlayedBy actorPlayingRole="ACTG2" />
+        <ShowRefs showIDs="GOT1" />
+    </Character>
+
+    <Character charID="CSS30">
+        <PersonRef personID="SS30" />
+        <Role>Side character</Role>
+        <Role>Queen of WF</Role>
+        <PlayedBy actorPlayingRole="ACTG3" />
+        <ShowRefs showIDs="GOT1" />
+    </Character>
+
+    <Character charID="WW99">
+        <PersonRef personID="BC90" />
+        <Role>Main character</Role>
+        <Role>Chemistry Teacher</Role>
+        <PlayedBy actorPlayingRole="ACTBB1" />
+        <ShowRefs showIDs="BB3" />
+    </Character>
+
+    <Character charID="SW84">
+        <PersonRef personID="AG30" />
+        <Role>Side character</Role>
+        <Role>Main character's wife</Role>
+        <PlayedBy actorPlayingRole="ACTBB2" />
+        <ShowRefs showIDs="BB3" />
+    </Character>
+
+    <Character charID="HNK77">
+        <PersonRef personID="DN57" />
+        <Role>Side character</Role>
+        <Role>NCB Agent</Role>
+        <PlayedBy actorPlayingRole="ACTBB3" />
+        <ShowRefs showIDs="BB3" />
+    </Character>
+
+    <!-- Shows -->
+    <Show showID="BC321" showName="Black Collar" language="English" episodeCount="68" phID="PH012">
+        <CharacterRef charRef="BCPB1" />
+        <CharacterRef charRef="BCEB1" />
+        <CharacterRef charRef="BCNC1" />
+        <CharacterRef charRef="BCNF1" />
+    </Show>
+
+    <Show showID="YC321" showName="Yellow Collar" language="English" episodeCount="1" phID="PH012">
+        <CharacterRef charRef="BCPB1" />
+        <CharacterRef charRef="BCEB1" />
+        <CharacterRef charRef="BCNC1" />
+    </Show>
+
+    <Show showID="TINTIN1" showName="Tintin in Timbuktu" language="English" episodeCount="1" phID="PH013">
+        <CharacterRef charRef="BCTT1" />
+        <CharacterRef charRef="BCTT2" />
+        <CharacterRef charRef="BCTT3" />
+    </Show>
+
+    <Show showID="TINTIN2" showName="Tintin in Cairo" language="English" episodeCount="1" phID="PH013">
+        <CharacterRef charRef="BCTT1" />
+        <CharacterRef charRef="BCTT2" />
+        <CharacterRef charRef="BCTT3" />
+    </Show>
+
+    <Show showID="FRIENDS1" showName="Friends Season 1" language="English" episodeCount="15" phID="PH013">
+        <CharacterRef charRef="BCEB1" />
+        <CharacterRef charRef="BCTT1" />
+        <CharacterRef charRef="BCPB1" />
+    </Show>
+
+    <Show showID="FRIENDS2" showName="Friends Season 2" language="English" episodeCount="15" phID="PH013">
+        <CharacterRef charRef="BCEB1" />
+        <CharacterRef charRef="BCTT1" />
+        <CharacterRef charRef="BCPB1" />
+    </Show>
+
+    <Show showID="GOT1" showName="GOT season 1" language="English" episodeCount="7" phID="PH013">
+        <CharacterRef charRef="CDT10" />
+        <CharacterRef charRef="CJS20" />
+        <CharacterRef charRef="CSS30" />
+    </Show>
+
+    <Show showID="BB3" showName="BB season 3" language="English" episodeCount="5" phID="PH012">
+        <CharacterRef charRef="WW99" />
+        <CharacterRef charRef="SW84" />
+        <CharacterRef charRef="HNK77" />
+    </Show>
+
+
+    <!-- Sequels, Prequels and Spinoffs -->
+    <SequelPrequelSpinoff showID="YC321" relatedShowID="BC321" relationship="spinoff" />
+    <SequelPrequelSpinoff showID="TINTIN2" relatedShowID="TINTIN1" relationship="sequel" />
+
+
+    <!-- Slots -->
+    <Slot channelID="CH498" slotID="ST918" date="16/03/2022" startTime="20:00" endTime="21:00" maxViewership="243987">
+        <Telecast showID="BC321" episodeNumber="12" duration="42" />
+        <Advertisement adID="AD182" adDuration="0.45" adFee="4256" adAgency="ADVAG321" adProduct="PRD321" />
+    </Slot>
+
+    <Slot channelID="CH499" slotID="ST919" date="16/03/2022" startTime="21:00" endTime="22:00" maxViewership="543987">
+        <Telecast showID="YC321" episodeNumber="1" duration="60" />
+    </Slot>
+
+    <Slot channelID="CH306" slotID="ST920" date="16/03/2022" startTime="20:00" endTime="22:00" maxViewership="343987">
+        <Telecast showID="TINTIN1" episodeNumber="1" duration="119" />
+    </Slot>
+
+    <Slot channelID="CH306" slotID="ST921" date="16/03/2022" startTime="22:00" endTime="23:59" maxViewership="343987">
+        <Telecast showID="TINTIN2" episodeNumber="1" duration="119" />
+    </Slot>
+
+    <Slot channelID="CH305" slotID="ST922" date="16/03/2022" startTime="22:00" endTime="23:59" maxViewership="43987">
+        <Telecast showID="TINTIN2" episodeNumber="1" duration="119" />
+    </Slot>
+
+    <Slot channelID="CH310" slotID="ST820" date="17/03/2022" startTime="12:00" endTime="14:00" maxViewership="40916">
+        <Telecast showID="TINTIN1" episodeNumber="1" duration="120" />
+    </Slot>
+
+    <Slot channelID="CH310" slotID="ST821" date="17/03/2022" startTime="14:00" endTime="15:00" maxViewership="235082">
+        <Telecast showID="BC321" episodeNumber="13" duration="59" />
+        <Advertisement adID="AD183" adDuration="1" adFee="4538" adAgency="ADVAG322" adProduct="PRD323" />
+    </Slot>
+
+    <Slot channelID="CH313" slotID="ST834" date="17/03/2022" startTime="20:00" endTime="21:00" maxViewership="562416">
+        <Telecast showID="FRIENDS1" episodeNumber="1" duration="60" />
+    </Slot>
+
+    <Slot channelID="CH313" slotID="ST835" date="17/04/2022" startTime="20:00" endTime="21:00" maxViewership="445216">
+        <Telecast showID="FRIENDS2" episodeNumber="1" duration="60" />
+    </Slot>
+
+    <Slot channelID="CH313" slotID="ST836" date="17/04/2022" startTime="22:00" endTime="23:30" maxViewership="845216">
+        <Telecast showID="GOT1" episodeNumber="3" duration="90" />
+    </Slot>
+
+    <Slot channelID="CH313" slotID="ST837" date="18/04/2022" startTime="22:30" endTime="23:30" maxViewership="805216">
+        <Telecast showID="GOT1" episodeNumber="4" duration="90" />
+    </Slot>
+
+    <Slot channelID="CH313" slotID="ST838" date="19/04/2022" startTime="22:30" endTime="23:30" maxViewership="800216">
+        <Telecast showID="GOT1" episodeNumber="5" duration="90" />
+    </Slot>
+
+    <Slot channelID="CH310" slotID="ST822" date="17/03/2022" startTime="1:00" endTime="2:00" maxViewership="52916">
+        <Telecast showID="BB3" episodeNumber="2" duration="100" />
+    </Slot>
+</tvshows>

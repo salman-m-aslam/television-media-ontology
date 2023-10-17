@@ -1,0 +1,1519 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#"
+     xml:base="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#actedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#actedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#actsAs"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#actsAs -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#actsAs">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Actor"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adAgencyCreator -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adAgencyCreator">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#createdAd"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdAgency"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adReferred -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adReferred">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdvertisementTelecast"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#advertisedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#advertisedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#advertises"/>
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#advertises -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#advertises">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement"/>
+        <rdfs:range>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:range>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolledBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolledBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolls"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolls -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolls">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#belongsTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#belongsTo">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCharacter"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#createdAd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#createdAd"/>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#deliveredOver -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#deliveredOver">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#delivers"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#delivers -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#delivers">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasAddress -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasAddress">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCharacter -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCharacter"/>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasContactInfo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasContactInfo">
+        <rdfs:domain>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+                </owl:unionOf>
+            </owl:Class>
+        </rdfs:domain>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasType -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasType">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductType"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#name -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#name">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ownedBy -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ownedBy">
+        <owl:inverseOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#owns"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#owns -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#owns">
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#relatedTo -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#relatedTo">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showReferred -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showReferred">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#telecastedAd -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#telecastedAd">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdvertisementTelecast"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#telecastedShow -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#telecastedShow">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adShownDetails"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdvertisementTelecast"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adFee -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adFee">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adShownDetails"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdvertisementTelecast"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adShownDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adShownDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressLine -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressLine">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#age -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#age">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#personDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#city -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#city">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#country -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#country">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeCount -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeCount">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeDuration -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeDuration">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showShownDetails"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeNumber">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showShownDetails"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#firstName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#firstName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#nameDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCategory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCategory">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasEmail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasEmail">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasID -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasID">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasName">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasPhoneNumber -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasPhoneNumber">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasRole -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasRole">
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasSubcategory -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasSubcategory">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductType"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#lastName -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#lastName">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#nameDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#nameDetail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#nameDetail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#personDetail -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#personDetail"/>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#pinCode -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#pinCode">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#price -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#price">
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+        <rdfs:comment>Price in INR</rdfs:comment>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#sex -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#sex">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#personDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showShownDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showShownDetails">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDate -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDate">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDetails"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDetails -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDetails"/>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotEndTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotEndTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDetails"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotMaxViewership -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotMaxViewership">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDetails"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotStartTime -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotStartTime">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDetails"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#state -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#state">
+        <rdfs:subPropertyOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressDetail"/>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Actor -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Actor">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#actsAs"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdAgency -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdAgency">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaCompany"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaConglomerate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#addressLine"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adAgencyCreator"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdAgency"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#advertises"/>
+                        <owl:someValuesFrom>
+                            <owl:Class>
+                                <owl:unionOf rdf:parseType="Collection">
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand"/>
+                                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+                                </owl:unionOf>
+                            </owl:Class>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdvertisementTelecast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AdvertisementTelecast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adReferred"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adDuration"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#adFee"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ownedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#owns"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#belongsTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasRole"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasEmail"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasPhoneNumber"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+                    </owl:Restriction>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaCompany -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaCompany">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#owns"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaConglomerate"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse"/>
+        <rdfs:comment>Equivalent to line is ALC TBOX assertion number 2</rdfs:comment>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaConglomerate -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaConglomerate">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#owns"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
+                        <owl:onClass rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaCompany"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:unionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#OTTPlatform"/>
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+                </owl:unionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ownedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaCompany"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Movie -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Movie">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeCount"/>
+                        <owl:someValuesFrom>
+                            <rdfs:Datatype>
+                                <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+                                <owl:withRestrictions rdf:parseType="Collection">
+                                    <rdf:Description>
+                                        <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</xsd:maxInclusive>
+                                    </rdf:Description>
+                                </owl:withRestrictions>
+                            </rdfs:Datatype>
+                        </owl:someValuesFrom>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name">
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#firstName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+        <owl:equivalentClass>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#lastName"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#OTTPlatform -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#OTTPlatform">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform"/>
+        <owl:disjointWith rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasAddress"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasContactInfo"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#name"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#age"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#sex"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ownedBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasType"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductType"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#price"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductType -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductType">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCategory"/>
+                        <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasSubcategory"/>
+                        <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+                        <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolls"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#SequelPrequelSpinoff -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#SequelPrequelSpinoff">
+        <owl:equivalentClass>
+            <owl:Class>
+                <owl:intersectionOf rdf:parseType="Collection">
+                    <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+                    <owl:Restriction>
+                        <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#relatedTo"/>
+                        <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+                    </owl:Restriction>
+                </owl:intersectionOf>
+            </owl:Class>
+        </owl:equivalentClass>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#bankrolledBy"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasCharacter"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeCount"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#hasName"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast"/>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#showReferred"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeDuration"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#episodeNumber"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot">
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#telecastedShow"/>
+                <owl:someValuesFrom rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ShowTelecast"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#deliveredOver"/>
+                <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+                <owl:onClass rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotDate"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotEndTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotMaxViewership"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+        <rdfs:subClassOf>
+            <owl:Restriction>
+                <owl:onProperty rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#slotStartTime"/>
+                <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+            </owl:Restriction>
+        </rdfs:subClassOf>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVShow -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVShow">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AD1_PRD321 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AD1_PRD321">
+        <adAgencyCreator rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ADVAG321"/>
+        <advertises rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRD321"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ADVAG321 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ADVAG321">
+        <hasID>ADVAG321</hasID>
+        <hasName>SunMoon Advertising Agency</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Ad_telecast_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Ad_telecast_1">
+        <adReferred rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AD1_PRD321"/>
+        <adDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</adDuration>
+        <adFee rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4387.12</adFee>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address_0_PH013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address_0_PH013">
+        <addressLine>Mumbai, Maharashtra, India</addressLine>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#BRD321 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#BRD321">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand"/>
+        <hasID>BRD321</hasID>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH301 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH301">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC201"/>
+        <hasID>CH301</hasID>
+        <hasName>Star Plus</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH302 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH302">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC201"/>
+        <hasID>CH302</hasID>
+        <hasName>Star Bharat</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH305 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH305">
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC202"/>
+        <hasID>CH305</hasID>
+        <hasName>Star Gold</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH307 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH307">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC203"/>
+        <hasID>CH307</hasID>
+        <hasName>Star Sports 1 Hindi</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH311 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH311">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+        <hasID>CH311</hasID>
+        <hasName>Baby TV</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH312 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH312">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+        <hasID>CH312</hasID>
+        <hasName>National Geographic India</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH314 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH314">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TVChannel"/>
+        <hasID>CH314</hasID>
+        <hasName>NDTV 24x7</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CI_PH013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CI_PH013">
+        <hasEmail>dharma@gmil.com</hasEmail>
+        <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8956824862</hasPhoneNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#FRIENDS1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#FRIENDS1">
+        <bankrolledBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PH013"/>
+        <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</episodeCount>
+        <hasID>FRIENDS1</hasID>
+        <hasName>Friends Season 1</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC201 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC201">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <hasID>MC201</hasID>
+        <hasName>Star Entertainment</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC202 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC202">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <hasID>MC202</hasID>
+        <hasName>Star Movies</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC203 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC203">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <hasID>MC203</hasID>
+        <hasName>Star Sport</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC204 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC204">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MG200"/>
+        <owns rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH311"/>
+        <hasID>MC204</hasID>
+        <hasName>Star Kids</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC205 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC205">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MG200"/>
+        <owns rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH312"/>
+        <hasID>MC205</hasID>
+        <hasName>Star Infotainment</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC206 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC206">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <owns rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH314"/>
+        <hasID>MC206</hasID>
+        <hasName>NDTV</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MG200 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MG200">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+        <owns rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC201"/>
+        <owns rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC202"/>
+        <owns rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MC203"/>
+        <hasID>MG200</hasID>
+        <hasName>Star India</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MobileType -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MobileType">
+        <hasCategory>Electronics</hasCategory>
+        <hasSubcategory>Mobiles</hasSubcategory>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRMB3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRMB3">
+        <firstName>Matte</firstName>
+        <lastName>Boomer</lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRNC2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRNC2">
+        <firstName>Neal</firstName>
+        <lastName>Carefree</lastName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PH013 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PH013">
+        <bankrolls rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN2"/>
+        <hasAddress rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address_0_PH013"/>
+        <hasContactInfo rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CI_PH013"/>
+        <hasID>PH013</hasID>
+        <hasName>Dharma Productions</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRD321 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRD321">
+        <hasType rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MobileType"/>
+        <ownedBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#BRD321"/>
+        <hasID>PRD321</hasID>
+        <hasName>myPhone13ProMaxUltra</hasName>
+        <price rdf:datatype="http://www.w3.org/2001/XMLSchema#float">1000.0</price>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRMB3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRMB3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+        <actsAs rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRNC2"/>
+        <name rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRMB3"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</age>
+        <hasID>PRMB3</hasID>
+        <sex>M</sex>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRNC2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRNC2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+        <belongsTo rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN1"/>
+        <name rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRNC2"/>
+        <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</age>
+        <hasID>PRNC2</hasID>
+        <hasRole>FBI Consultant</hasRole>
+        <hasRole>Main Character</hasRole>
+        <hasRole>Skilled Forger</hasRole>
+        <hasRole>Thief</hasRole>
+        <sex>M</sex>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot_922 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot_922">
+        <deliveredOver rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CH305"/>
+        <telecastedAd rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Ad_telecast_1"/>
+        <telecastedShow rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast_Tintin_2"/>
+        <hasID>SL922</hasID>
+        <slotDate>16/03/2022</slotDate>
+        <slotEndTime>00:00</slotEndTime>
+        <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43987</slotMaxViewership>
+        <slotStartTime>23:59</slotStartTime>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN1">
+        <bankrolledBy rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PH013"/>
+        <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeCount>
+        <hasID>TINTIN1</hasID>
+        <hasName>Tintin in Timbuktu</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN2">
+        <relatedTo rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN1"/>
+        <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeCount>
+        <hasID>TINTIN2</hasID>
+        <hasName>TIntin in Cairo</hasName>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast_Tintin_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast_Tintin_2">
+        <showReferred rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN2"/>
+        <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</episodeDuration>
+        <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // General axioms
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    <rdf:Description>
+        <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#AllDisjointClasses"/>
+        <owl:members rdf:parseType="Collection">
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Advertisement"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Brand"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ContactInfo"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaPlatform"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Product"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot"/>
+            <rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast"/>
+        </owl:members>
+    </rdf:Description>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

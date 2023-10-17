@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/salman/ontologies/2022/tvshowsInferences"
+         xmlns="http://www.semanticweb.org/salman/ontologies/2022/tvshowsInferences#"
+         xmlns:tvsh="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/salman/ontologies/2022/tvshowsInferences"/>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Actor">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Character">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Person"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#ProductionHouse">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaCompany">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MediaConglomerate">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Company"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Movie">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+</rdf:Description>
+
+<rdf:Description rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#SequelPrequelSpinoff">
+  <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+</rdf:Description>
+
+<tvsh:Advertisement rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#AD1_PRD321"/>
+
+<tvsh:AdvertisementTelecast rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Ad_telecast_1"/>
+
+<tvsh:Address rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Address_0_PH013"/>
+
+<tvsh:ContactInfo rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#CI_PH013"/>
+
+<tvsh:Show rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#FRIENDS1"/>
+
+<tvsh:ProductType rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#MobileType"/>
+
+<tvsh:Name rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRMB3"/>
+
+<tvsh:Name rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Name_PRNC2"/>
+
+<tvsh:SequelPrequelSpinoff rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN2">
+  <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Movie"/>
+</tvsh:SequelPrequelSpinoff>
+
+<tvsh:Actor rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRMB3"/>
+
+<tvsh:Character rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#PRNC2"/>
+
+<tvsh:SequelPrequelSpinoff rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN1">
+  <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Movie"/>
+  <tvsh:relatedTo rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#TINTIN2"/>
+</tvsh:SequelPrequelSpinoff>
+
+<tvsh:Slot rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Slot_922"/>
+
+<tvsh:ShowTelecast rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Telecast_Tintin_2"/>
+
+<tvsh:SequelPrequelSpinoff rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#BC321">
+  <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Show"/>
+  <tvsh:relatedTo rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#YC321"/>
+</tvsh:SequelPrequelSpinoff>
+
+<tvsh:SequelPrequelSpinoff rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#YC321">
+  <rdf:type rdf:resource="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#Movie"/>
+</tvsh:SequelPrequelSpinoff>
+
+<tvsh:Show rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#FRIENDS2"/>
+
+<tvsh:Show rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#GOT1"/>
+
+<tvsh:Show rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#BB3"/>
+
+
+</rdf:RDF>

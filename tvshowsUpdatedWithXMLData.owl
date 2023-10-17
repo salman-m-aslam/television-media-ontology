@@ -1,0 +1,2037 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+         xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+         xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+         xmlns:owl="http://www.w3.org/2002/07/owl#"
+         xml:base="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows"
+         xmlns="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows#">
+
+<owl:Ontology rdf:about="http://www.semanticweb.org/atishay/ontologies/2022/3/tvshows"/>
+
+<owl:ObjectProperty rdf:about="#actedBy">
+  <owl:inverseOf rdf:resource="#actsAs"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#actsAs">
+  <rdfs:domain rdf:resource="#Actor"/>
+  <rdfs:range rdf:resource="#Character"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#adAgencyCreator">
+  <owl:inverseOf rdf:resource="#createdAd"/>
+  <rdfs:domain rdf:resource="#Advertisement"/>
+  <rdfs:range rdf:resource="#AdAgency"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#createdAd"/>
+
+<owl:ObjectProperty rdf:about="#adReferred">
+  <rdfs:domain rdf:resource="#AdvertisementTelecast"/>
+  <rdfs:range rdf:resource="#Advertisement"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#advertisedBy">
+  <owl:inverseOf rdf:resource="#advertises"/>
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Brand"/>
+        <rdf:Description rdf:about="#Product"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#advertises">
+  <rdfs:domain rdf:resource="#Advertisement"/>
+  <rdfs:range>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Brand"/>
+        <rdf:Description rdf:about="#Product"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:range>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#bankrolledBy">
+  <owl:inverseOf rdf:resource="#bankrolls"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#bankrolls">
+  <rdfs:domain rdf:resource="#ProductionHouse"/>
+  <rdfs:range rdf:resource="#Show"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#belongsTo">
+  <owl:inverseOf rdf:resource="#hasCharacter"/>
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="#Show"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasCharacter"/>
+
+<owl:ObjectProperty rdf:about="#deliveredOver">
+  <owl:inverseOf rdf:resource="#delivers"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#delivers">
+  <rdfs:domain rdf:resource="#MediaPlatform"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasAddress">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Company"/>
+        <rdf:Description rdf:about="#Person"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range rdf:resource="#Address"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasContactInfo">
+  <rdfs:domain>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Company"/>
+        <rdf:Description rdf:about="#Person"/>
+      </owl:unionOf>
+    </owl:Class>
+  </rdfs:domain>
+  <rdfs:range rdf:resource="#ContactInfo"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#hasType">
+  <rdfs:domain rdf:resource="#Product"/>
+  <rdfs:range rdf:resource="#ProductType"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#name">
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="#Name"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#ownedBy">
+  <owl:inverseOf rdf:resource="#owns"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#owns">
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#relatedTo">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#SymmetricProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#IrreflexiveProperty"/>
+  <rdfs:domain rdf:resource="#Show"/>
+  <rdfs:range rdf:resource="#Show"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#showReferred">
+  <rdfs:domain rdf:resource="#ShowTelecast"/>
+  <rdfs:range rdf:resource="#Show"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#telecastedAd">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+  <rdfs:range rdf:resource="#AdvertisementTelecast"/>
+</owl:ObjectProperty>
+
+<owl:ObjectProperty rdf:about="#telecastedShow">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+  <rdfs:range rdf:resource="#ShowTelecast"/>
+</owl:ObjectProperty>
+
+<owl:DatatypeProperty rdf:about="#adDuration">
+  <rdfs:subPropertyOf rdf:resource="#adShownDetails"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#AdvertisementTelecast"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#adShownDetails">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#adFee">
+  <rdfs:subPropertyOf rdf:resource="#adShownDetails"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#AdvertisementTelecast"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#addressDetail">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Address"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#addressLine">
+  <rdfs:subPropertyOf rdf:resource="#addressDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#age">
+  <rdfs:subPropertyOf rdf:resource="#personDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#personDetail"/>
+
+<owl:DatatypeProperty rdf:about="#city">
+  <rdfs:subPropertyOf rdf:resource="#addressDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#country">
+  <rdfs:subPropertyOf rdf:resource="#addressDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#episodeCount">
+  <rdfs:domain rdf:resource="#Show"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#episodeDuration">
+  <rdfs:subPropertyOf rdf:resource="#showShownDetails"/>
+  <rdfs:domain rdf:resource="#ShowTelecast"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#showShownDetails">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#episodeNumber">
+  <rdfs:subPropertyOf rdf:resource="#showShownDetails"/>
+  <rdfs:domain rdf:resource="#ShowTelecast"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#firstName">
+  <rdfs:subPropertyOf rdf:resource="#nameDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Name"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#nameDetail"/>
+
+<owl:DatatypeProperty rdf:about="#hasCategory">
+  <rdfs:domain rdf:resource="#ProductType"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasEmail">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ContactInfo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasID">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasName">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="http://www.w3.org/2002/07/owl#Thing"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasPhoneNumber">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#ContactInfo"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasRole">
+  <rdfs:domain rdf:resource="#Character"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#hasSubcategory">
+  <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+  <rdfs:domain rdf:resource="#ProductType"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#lastName">
+  <rdfs:subPropertyOf rdf:resource="#nameDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Name"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#pinCode">
+  <rdfs:subPropertyOf rdf:resource="#addressDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#price">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Product"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+  <rdfs:comment>Price in INR</rdfs:comment>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#sex">
+  <rdfs:subPropertyOf rdf:resource="#personDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:domain rdf:resource="#Person"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#slotDate">
+  <rdfs:subPropertyOf rdf:resource="#slotDetails"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#slotDetails"/>
+
+<owl:DatatypeProperty rdf:about="#slotEndTime">
+  <rdfs:subPropertyOf rdf:resource="#slotDetails"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#slotMaxViewership">
+  <rdfs:subPropertyOf rdf:resource="#slotDetails"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#slotStartTime">
+  <rdfs:subPropertyOf rdf:resource="#slotDetails"/>
+  <rdfs:domain rdf:resource="#Slot"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:DatatypeProperty rdf:about="#state">
+  <rdfs:subPropertyOf rdf:resource="#addressDetail"/>
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#FunctionalProperty"/>
+  <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+</owl:DatatypeProperty>
+
+<owl:Class rdf:about="#Actor">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Person"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#actsAs"/>
+          <owl:someValuesFrom rdf:resource="#Character"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <owl:disjointWith rdf:resource="#Character"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Character">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Person"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#belongsTo"/>
+          <owl:someValuesFrom rdf:resource="#Show"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasRole"/>
+          <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Advertisement">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#adAgencyCreator"/>
+          <owl:someValuesFrom rdf:resource="#AdAgency"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#advertises"/>
+          <owl:someValuesFrom>
+            <owl:Class>
+              <owl:unionOf rdf:parseType="Collection">
+                <rdf:Description rdf:about="#Brand"/>
+                <rdf:Description rdf:about="#Product"/>
+              </owl:unionOf>
+            </owl:Class>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#AdAgency">
+  <rdfs:subClassOf rdf:resource="#Company"/>
+  <owl:disjointWith rdf:resource="#MediaCompany"/>
+  <owl:disjointWith rdf:resource="#MediaConglomerate"/>
+  <owl:disjointWith rdf:resource="#ProductionHouse"/>
+</owl:Class>
+
+<owl:Class rdf:about="#AdvertisementTelecast">
+  <rdfs:subClassOf rdf:resource="#Telecast"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#adReferred"/>
+      <owl:someValuesFrom rdf:resource="#Advertisement"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#adDuration"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#adFee"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <owl:disjointWith rdf:resource="#ShowTelecast"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Brand">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#ownedBy"/>
+      <owl:someValuesFrom rdf:resource="#Company"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#owns"/>
+      <owl:someValuesFrom rdf:resource="#Product"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Product">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#ownedBy"/>
+      <owl:someValuesFrom rdf:resource="#Brand"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasType"/>
+      <owl:onClass rdf:resource="#ProductType"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#price"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#float"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#ProductionHouse">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Company"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#bankrolls"/>
+          <owl:someValuesFrom rdf:resource="#Show"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Show">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#bankrolledBy"/>
+      <owl:someValuesFrom rdf:resource="#ProductionHouse"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasCharacter"/>
+      <owl:someValuesFrom rdf:resource="#Character"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#episodeCount"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Slot">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#telecastedShow"/>
+      <owl:someValuesFrom rdf:resource="#ShowTelecast"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#deliveredOver"/>
+      <owl:onClass rdf:resource="#MediaPlatform"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#slotDate"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#slotEndTime"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#slotMaxViewership"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#slotStartTime"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#MediaPlatform">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#OTTPlatform"/>
+        <rdf:Description rdf:about="#TVChannel"/>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#ownedBy"/>
+      <owl:someValuesFrom rdf:resource="#MediaCompany"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasName"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Company"/>
+
+<owl:Class rdf:about="#Person">
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasAddress"/>
+      <owl:someValuesFrom rdf:resource="#Address"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#hasContactInfo"/>
+      <owl:someValuesFrom rdf:resource="#ContactInfo"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#name"/>
+      <owl:someValuesFrom rdf:resource="#Name"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#age"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#sex"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#Address">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#addressLine"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#ContactInfo">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:unionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasEmail"/>
+          <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasPhoneNumber"/>
+          <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+        </owl:Restriction>
+      </owl:unionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#ProductType">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasCategory"/>
+          <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+        </owl:Restriction>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#hasSubcategory"/>
+          <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+          <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">0</owl:minQualifiedCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#Name">
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#firstName"/>
+      <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </owl:equivalentClass>
+  <owl:equivalentClass>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#lastName"/>
+      <owl:onDataRange rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+      <owl:qualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">1</owl:qualifiedCardinality>
+    </owl:Restriction>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#ShowTelecast">
+  <rdfs:subClassOf rdf:resource="#Telecast"/>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#showReferred"/>
+      <owl:someValuesFrom rdf:resource="#Show"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#episodeDuration"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+  <rdfs:subClassOf>
+    <owl:Restriction>
+      <owl:onProperty rdf:resource="#episodeNumber"/>
+      <owl:someValuesFrom rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+    </owl:Restriction>
+  </rdfs:subClassOf>
+</owl:Class>
+
+<owl:Class rdf:about="#MediaCompany">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Company"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#owns"/>
+          <owl:someValuesFrom rdf:resource="#MediaPlatform"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <owl:disjointWith rdf:resource="#MediaConglomerate"/>
+  <owl:disjointWith rdf:resource="#ProductionHouse"/>
+  <rdfs:comment>Equivalent to line is ALC TBOX assertion number 2</rdfs:comment>
+</owl:Class>
+
+<owl:Class rdf:about="#MediaConglomerate">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Company"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#owns"/>
+          <owl:onClass rdf:resource="#MediaCompany"/>
+          <owl:minQualifiedCardinality rdf:datatype="http://www.w3.org/2001/XMLSchema#nonNegativeInteger">5</owl:minQualifiedCardinality>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+  <owl:disjointWith rdf:resource="#ProductionHouse"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Telecast"/>
+
+<owl:Class rdf:about="#OTTPlatform">
+  <rdfs:subClassOf rdf:resource="#MediaPlatform"/>
+  <owl:disjointWith rdf:resource="#TVChannel"/>
+</owl:Class>
+
+<owl:Class rdf:about="#TVChannel">
+  <rdfs:subClassOf rdf:resource="#MediaPlatform"/>
+</owl:Class>
+
+<owl:Class rdf:about="#Movie">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Show"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#episodeCount"/>
+          <owl:someValuesFrom>
+            <rdfs:Datatype>
+              <owl:onDatatype rdf:resource="http://www.w3.org/2001/XMLSchema#positiveInteger"/>
+              <owl:withRestrictions>
+                <rdf:Description>
+                  <rdf:first>
+                    <rdf:Description>
+                      <xsd:maxInclusive rdf:datatype="http://www.w3.org/2001/XMLSchema#positiveInteger">1</xsd:maxInclusive>
+                    </rdf:Description>
+                  </rdf:first>
+                  <rdf:rest rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#nil"/>
+                </rdf:Description>
+              </owl:withRestrictions>
+            </rdfs:Datatype>
+          </owl:someValuesFrom>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#SequelPrequelSpinoff">
+  <owl:equivalentClass>
+    <owl:Class>
+      <owl:intersectionOf rdf:parseType="Collection">
+        <rdf:Description rdf:about="#Show"/>
+        <owl:Restriction>
+          <owl:onProperty rdf:resource="#relatedTo"/>
+          <owl:someValuesFrom rdf:resource="#Show"/>
+        </owl:Restriction>
+      </owl:intersectionOf>
+    </owl:Class>
+  </owl:equivalentClass>
+</owl:Class>
+
+<owl:Class rdf:about="#TVShow">
+  <rdfs:subClassOf rdf:resource="#Show"/>
+</owl:Class>
+
+<rdf:Description rdf:about="#AD1_PRD321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <adAgencyCreator rdf:resource="#ADVAG321"/>
+  <advertises rdf:resource="#PRD321"/>
+</rdf:Description>
+
+<AdAgency rdf:about="#ADVAG321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID>ADVAG321</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SunMoon Advertising Agency</hasName>
+</AdAgency>
+
+<Product rdf:about="#PRD321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasType rdf:resource="#MobileType"/>
+  <ownedBy rdf:resource="#BRD321"/>
+  <hasType rdf:resource="#producttype1"/>
+  <hasID>PRD321</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myPhone13ProMaxUltra</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">1000.0</price>
+</Product>
+
+<rdf:Description rdf:about="#Ad_telecast_1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <adReferred rdf:resource="#AD1_PRD321"/>
+  <adDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</adDuration>
+  <adFee rdf:datatype="http://www.w3.org/2001/XMLSchema#float">4387.12</adFee>
+</rdf:Description>
+
+<rdf:Description rdf:about="#Address_0_PH013">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <addressLine>Mumbai, Maharashtra, India</addressLine>
+</rdf:Description>
+
+<Brand rdf:about="#BRD321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID>BRD321</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">banana</hasName>
+</Brand>
+
+<TVChannel rdf:about="#CH301">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC201"/>
+  <hasID>CH301</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StarPlus</hasName>
+</TVChannel>
+
+<Company rdf:about="#MC201">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#MediaCompany"/>
+  <hasID>MC201</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Entertainment</hasName>
+</Company>
+
+<TVChannel rdf:about="#CH302">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC201"/>
+  <hasID>CH302</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Bharat</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH305">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC202"/>
+  <hasID>CH305</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Gold</hasName>
+</TVChannel>
+
+<Company rdf:about="#MC202">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#MediaCompany"/>
+  <hasID>MC202</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Movies</hasName>
+</Company>
+
+<TVChannel rdf:about="#CH307">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC203"/>
+  <hasID>CH307</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Sports 1 Hindi</hasName>
+</TVChannel>
+
+<Company rdf:about="#MC203">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <rdf:type rdf:resource="#MediaCompany"/>
+  <hasID>MC203</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Sport</hasName>
+</Company>
+
+<TVChannel rdf:about="#CH311">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID>CH311</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Baby TV</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH312">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID>CH312</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">National Geographic India</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH314">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID>CH314</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NDTV 24x7</hasName>
+</TVChannel>
+
+<rdf:Description rdf:about="#CI_PH013">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasEmail>dharma@gmil.com</hasEmail>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8956824862</hasPhoneNumber>
+</rdf:Description>
+
+<TVShow rdf:about="#FRIENDS1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH013"/>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</episodeCount>
+  <hasID>FRIENDS1</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Friends Season 1</hasName>
+</TVShow>
+
+<ProductionHouse rdf:about="#PH013">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolls rdf:resource="#TINTIN2"/>
+  <hasAddress rdf:resource="#Address_0_PH013"/>
+  <hasContactInfo rdf:resource="#CI_PH013"/>
+  <hasContactInfo rdf:resource="#contactinfo26"/>
+  <hasID>PH013</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Dharma Productions</hasName>
+</ProductionHouse>
+
+<Company rdf:about="#MC204">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MG200"/>
+  <owns rdf:resource="#CH311"/>
+  <rdf:type rdf:resource="#MediaCompany"/>
+  <hasID>MC204</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Kids</hasName>
+</Company>
+
+<Company rdf:about="#MG200">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <owns rdf:resource="#MC201"/>
+  <owns rdf:resource="#MC202"/>
+  <owns rdf:resource="#MC203"/>
+  <rdf:type rdf:resource="#MediaConglomerate"/>
+  <hasID>MG200</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star India</hasName>
+</Company>
+
+<Company rdf:about="#MC205">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MG200"/>
+  <owns rdf:resource="#CH312"/>
+  <rdf:type rdf:resource="#MediaCompany"/>
+  <hasID>MC205</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Infotainment</hasName>
+</Company>
+
+<Company rdf:about="#MC206">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <owns rdf:resource="#CH314"/>
+  <rdf:type rdf:resource="#MediaCompany"/>
+  <hasID>MC206</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NDTV</hasName>
+</Company>
+
+<rdf:Description rdf:about="#MobileType">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory>Electronics</hasCategory>
+  <hasSubcategory>Mobiles</hasSubcategory>
+</rdf:Description>
+
+<rdf:Description rdf:about="#Name_PRMB3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <firstName>Matte</firstName>
+  <lastName>Boomer</lastName>
+</rdf:Description>
+
+<rdf:Description rdf:about="#Name_PRNC2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <firstName>Neal</firstName>
+  <lastName>Carefree</lastName>
+</rdf:Description>
+
+<TVShow rdf:about="#TINTIN2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <relatedTo rdf:resource="#TINTIN1"/>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeCount>
+  <hasID>TINTIN2</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tintin in Cairo</hasName>
+</TVShow>
+
+<Person rdf:about="#PRMB3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <actsAs rdf:resource="#PRNC2"/>
+  <name rdf:resource="#Name_PRMB3"/>
+  <hasContactInfo rdf:resource="#contactinfo3"/>
+  <hasID>PRMB3</hasID>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">32</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</sex>
+</Person>
+
+<Person rdf:about="#PRNC2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <belongsTo rdf:resource="#TINTIN1"/>
+  <name rdf:resource="#Name_PRNC2"/>
+  <hasContactInfo rdf:resource="#contactinfo6"/>
+  <hasID>PRNC2</hasID>
+  <hasRole>FBI Consultant</hasRole>
+  <hasRole>Main Character</hasRole>
+  <hasRole>Skilled Forger</hasRole>
+  <hasRole>Thief</hasRole>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">28</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</sex>
+</Person>
+
+<TVShow rdf:about="#TINTIN1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH013"/>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeCount>
+  <hasID>TINTIN1</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tintin in Timbuktu</hasName>
+</TVShow>
+
+<rdf:Description rdf:about="#Slot_922">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH305"/>
+  <telecastedAd rdf:resource="#Ad_telecast_1"/>
+  <telecastedShow rdf:resource="#Telecast_Tintin_2"/>
+  <hasID>SL922</hasID>
+  <slotDate>16/03/2022</slotDate>
+  <slotEndTime>00:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43987</slotMaxViewership>
+  <slotStartTime>23:59</slotStartTime>
+</rdf:Description>
+
+<rdf:Description rdf:about="#Telecast_Tintin_2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#TINTIN2"/>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</episodeDuration>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+</rdf:Description>
+
+<MediaCompany rdf:about="#MC029">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC029</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kayal Works</hasName>
+</MediaCompany>
+
+<MediaCompany rdf:about="#MC025">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC025</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Tulasi Productions</hasName>
+</MediaCompany>
+
+<MediaCompany rdf:about="#MC019">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC019</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Thaazhampoo Productions</hasName>
+</MediaCompany>
+
+<MediaCompany rdf:about="#MC129">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC129</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Arasi Network</hasName>
+</MediaCompany>
+
+<MediaCompany rdf:about="#MC912">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC912</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kannagi Works</hasName>
+</MediaCompany>
+
+<MediaCompany rdf:about="#MC009">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MC009</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Murugan Network</hasName>
+</MediaCompany>
+
+<MediaConglomerate rdf:about="#MG289">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <owns rdf:resource="#MC029"/>
+  <owns rdf:resource="#MC025"/>
+  <owns rdf:resource="#MC019"/>
+  <owns rdf:resource="#MC129"/>
+  <owns rdf:resource="#MC912"/>
+  <owns rdf:resource="#MC009"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">MG289</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sooriyan Network</hasName>
+</MediaConglomerate>
+
+<TVChannel rdf:about="#CH498">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH498</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sooriyan TV</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH499">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH499</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nilavu TV</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH303">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC201"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH303</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Utsav</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH304">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC201"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH304</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star World</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH306">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC202"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH306</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Movies</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH308">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC203"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH308</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Sports 1</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH309">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC203"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH309</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Sports First</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH310">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC203"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH310</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Star Sports 2</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH313">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC205"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH313</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Nat Geo Wild India</hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH315">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC206"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH315</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NDTV India </hasName>
+</TVChannel>
+
+<TVChannel rdf:about="#CH316">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#MC206"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CH316</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">NDTV Prime</hasName>
+</TVChannel>
+
+<AdAgency rdf:about="#ADVAG322">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG322</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Stars Advertising Agency</hasName>
+</AdAgency>
+
+<AdAgency rdf:about="#ADVAG323">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG323</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Good Advertising Agency</hasName>
+</AdAgency>
+
+<AdAgency rdf:about="#ADVAG324">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG324</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Bad Advertising Agency</hasName>
+</AdAgency>
+
+<AdAgency rdf:about="#ADVAG325">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG325</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Ugly Advertising Agency</hasName>
+</AdAgency>
+
+<AdAgency rdf:about="#ADVAG326">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG326</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Beautiful Advertising Agency</hasName>
+</AdAgency>
+
+<AdAgency rdf:about="#ADVAG327">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG327</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">StarBright Advertising Agency</hasName>
+</AdAgency>
+
+<AdAgency rdf:about="#ADVAG328">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ADVAG328</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Kryztal Advertising Agency</hasName>
+</AdAgency>
+
+<Brand rdf:about="#BRD322">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BRD322</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">pineapple</hasName>
+</Brand>
+
+<Brand rdf:about="#BRD323">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BRD323</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toyola cars</hasName>
+</Brand>
+
+<Brand rdf:about="#BRD324">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BRD324</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edison cars</hasName>
+</Brand>
+
+<ProductType rdf:about="#producttype1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electronics</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobile</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD322">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD321"/>
+  <hasType rdf:resource="#producttype2"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD322</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myPhone14</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electronics</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobile</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD323">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD321"/>
+  <hasType rdf:resource="#producttype3"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD323</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myPhone14Mini</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electronics</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mobile</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD324">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD322"/>
+  <hasType rdf:resource="#producttype4"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD324</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">myWatch</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">electronics</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">smartwatch</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD325">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD323"/>
+  <hasType rdf:resource="#producttype5"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD325</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toyola innola</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">3000000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vehicles</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SUV</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD326">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD323"/>
+  <hasType rdf:resource="#producttype6"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD326</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">toyola corollary</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">2000000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vehicles</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sedan</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD327">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD324"/>
+  <hasType rdf:resource="#producttype7"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD327</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edison XAEA</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">20000000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vehicles</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hatchback</hasSubcategory>
+</ProductType>
+
+<Product rdf:about="#PRD328">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <ownedBy rdf:resource="#BRD324"/>
+  <hasType rdf:resource="#producttype8"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRD328</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">edison XAEB</hasName>
+  <price rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">30000000.0</price>
+</Product>
+
+<ProductType rdf:about="#producttype8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasCategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">vehicles</hasCategory>
+  <hasSubcategory rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Sedan</hasSubcategory>
+</ProductType>
+
+<Person rdf:about="#PRJO5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo1"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRJO5</hasID>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</sex>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#PRTT4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo2"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRTT4</hasID>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">48</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</sex>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<ContactInfo rdf:about="#contactinfo3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#PRPB4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo4"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRPB4</hasID>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</sex>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#PREB3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo5"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PREB3</hasID>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">39</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">F</sex>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<ContactInfo rdf:about="#contactinfo6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#PRNF2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo7"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PRNF2</hasID>
+  <age rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">25</age>
+  <sex rdf:datatype="http://www.w3.org/2001/XMLSchema#string">M</sex>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#PREM1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo8"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PREM1</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9424242042</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ellen_mask@attherate.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PREM2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo9"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PREM2</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9424242043</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">allen_mosk@attherate.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PREM3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo10"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PREM3</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9424242043</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">alven_mysk@attherate.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PHT1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo11"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHT1</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9424242043</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">haddock@tintin.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PHT2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo12"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHT2</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9424242044</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">tintin@tintin.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PHT3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo13"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHT3</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">9424242045</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">calculus@tintin.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PHT4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo14"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHT4</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo14">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8136398680</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">lorem@hotmail.ed</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#PHT5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo15"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PHT5</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo15">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4613936467</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">suspendisse.eleifend@yahoo.couk</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#DT10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo16"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DT10</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo16">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#JS20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo17"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">JS20</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo17">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#SS30">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo18"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SS30</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo18">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+</ContactInfo>
+
+<Person rdf:about="#EC24">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo19"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">EC24</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo19">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4613936497</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">emiliac@yahoo.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#KT72">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo20"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">KT72</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4613579667</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">kitp88@yahoo.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#ST30">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo21"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST30</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo21">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3548354535</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SSand5@gmail.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#BC90">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo22"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BC90</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo22">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3535954535</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Brayan.crayon@gmail.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#AG30">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo23"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AG30</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo23">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3564654535</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">annnngg90@gmail.com</hasEmail>
+</ContactInfo>
+
+<Person rdf:about="#DN57">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo24"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">DN57</hasID>
+</Person>
+
+<ContactInfo rdf:about="#contactinfo24">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">78956321</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Hanko78@hotmail.com</hasEmail>
+</ContactInfo>
+
+<Actor rdf:about="#ACTJO1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTJO1</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTTT1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTTT1</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTMB1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTMB1</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTT1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTT1</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTT2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTT2</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTT3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTT3</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTG1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTG1</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTG2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTG2</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTG3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTG3</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTBB1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTBB1</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTBB2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTBB2</hasID>
+</Actor>
+
+<Actor rdf:about="#ACTBB3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ACTBB3</hasID>
+</Actor>
+
+<ProductionHouse rdf:about="#PH012">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasContactInfo rdf:resource="#contactinfo25"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">PH012</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Mugizh Productions</hasName>
+</ProductionHouse>
+
+<ContactInfo rdf:about="#contactinfo25">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8787633442</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">mugizh_prods@gmayil.com</hasEmail>
+</ContactInfo>
+
+<ContactInfo rdf:about="#contactinfo26">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasPhoneNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">8956824862</hasPhoneNumber>
+  <hasEmail rdf:datatype="http://www.w3.org/2001/XMLSchema#string">dharma@gmil.com</hasEmail>
+</ContactInfo>
+
+<Character rdf:about="#BCPB1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCPB1</hasID>
+</Character>
+
+<Character rdf:about="#BCEB1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCEB1</hasID>
+</Character>
+
+<Character rdf:about="#BCNC1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCNC1</hasID>
+</Character>
+
+<Character rdf:about="#BCNF1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCNF1</hasID>
+</Character>
+
+<Character rdf:about="#BCTT1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCTT1</hasID>
+</Character>
+
+<Character rdf:about="#BCTT2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCTT2</hasID>
+</Character>
+
+<Character rdf:about="#BCTT3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BCTT3</hasID>
+</Character>
+
+<Character rdf:about="#CDT10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CDT10</hasID>
+</Character>
+
+<Character rdf:about="#CJS20">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CJS20</hasID>
+</Character>
+
+<Character rdf:about="#CSS30">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">CSS30</hasID>
+</Character>
+
+<Character rdf:about="#WW99">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">WW99</hasID>
+</Character>
+
+<Character rdf:about="#SW84">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">SW84</hasID>
+</Character>
+
+<Character rdf:about="#HNK77">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">HNK77</hasID>
+</Character>
+
+<TVShow rdf:about="#BC321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH012"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BC321</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Black Collar</hasName>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">68</episodeCount>
+</TVShow>
+
+<TVShow rdf:about="#YC321">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH012"/>
+  <relatedTo rdf:resource="#BC321"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">YC321</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Yellow Collar</hasName>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeCount>
+</TVShow>
+
+<TVShow rdf:about="#FRIENDS2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH013"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">FRIENDS2</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">Friends Season 2</hasName>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">15</episodeCount>
+</TVShow>
+
+<TVShow rdf:about="#GOT1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH013"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOT1</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">GOT season 1</hasName>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">7</episodeCount>
+</TVShow>
+
+<TVShow rdf:about="#BB3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <bankrolledBy rdf:resource="#PH012"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BB3</hasID>
+  <hasName rdf:datatype="http://www.w3.org/2001/XMLSchema#string">BB season 3</hasName>
+  <episodeCount rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</episodeCount>
+</TVShow>
+
+<Slot rdf:about="#ST918">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH498"/>
+  <telecastedShow rdf:resource="#showtelecast1"/>
+  <telecastedAd rdf:resource="#AD182"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST918</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">243987</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast1">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#BC321"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">12</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">42</episodeDuration>
+</ShowTelecast>
+
+<AdvertisementTelecast rdf:about="#AD182">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AD182</hasID>
+  <adDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</adDuration>
+  <adFee rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4256.0</adFee>
+</AdvertisementTelecast>
+
+<Slot rdf:about="#ST919">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH499"/>
+  <telecastedShow rdf:resource="#showtelecast2"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST919</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">543987</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast2">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#YC321"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST920">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH306"/>
+  <telecastedShow rdf:resource="#showtelecast3"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST920</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">343987</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast3">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#TINTIN1"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST921">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH306"/>
+  <telecastedShow rdf:resource="#showtelecast4"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST921</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:59</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">343987</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast4">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#TINTIN2"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST922">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH305"/>
+  <telecastedShow rdf:resource="#showtelecast5"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST922</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">16/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:59</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">43987</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast5">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#TINTIN2"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">119</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST820">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH310"/>
+  <telecastedShow rdf:resource="#showtelecast6"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST820</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">12:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">40916</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast6">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#TINTIN1"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">120</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST821">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH310"/>
+  <telecastedShow rdf:resource="#showtelecast7"/>
+  <telecastedAd rdf:resource="#AD183"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST821</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">14:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">15:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">235082</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast7">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#BC321"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">13</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">59</episodeDuration>
+</ShowTelecast>
+
+<AdvertisementTelecast rdf:about="#AD183">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">AD183</hasID>
+  <adDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</adDuration>
+  <adFee rdf:datatype="http://www.w3.org/2001/XMLSchema#decimal">4538.0</adFee>
+</AdvertisementTelecast>
+
+<Slot rdf:about="#ST834">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH313"/>
+  <telecastedShow rdf:resource="#showtelecast8"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST834</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">562416</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast8">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#FRIENDS1"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST835">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH313"/>
+  <telecastedShow rdf:resource="#showtelecast9"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST835</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/04/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">20:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">21:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">445216</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast9">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#FRIENDS2"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">1</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">60</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST836">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH313"/>
+  <telecastedShow rdf:resource="#showtelecast10"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST836</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/04/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:30</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">845216</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast10">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#GOT1"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">3</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST837">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH313"/>
+  <telecastedShow rdf:resource="#showtelecast11"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST837</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">18/04/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:30</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:30</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">805216</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast11">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#GOT1"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">4</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST838">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH313"/>
+  <telecastedShow rdf:resource="#showtelecast12"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST838</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">19/04/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">22:30</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">23:30</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">800216</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast12">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#GOT1"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">5</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">90</episodeDuration>
+</ShowTelecast>
+
+<Slot rdf:about="#ST822">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <deliveredOver rdf:resource="#CH310"/>
+  <telecastedShow rdf:resource="#showtelecast13"/>
+  <hasID rdf:datatype="http://www.w3.org/2001/XMLSchema#string">ST822</hasID>
+  <slotDate rdf:datatype="http://www.w3.org/2001/XMLSchema#string">17/03/2022</slotDate>
+  <slotStartTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">1:00</slotStartTime>
+  <slotEndTime rdf:datatype="http://www.w3.org/2001/XMLSchema#string">2:00</slotEndTime>
+  <slotMaxViewership rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">52916</slotMaxViewership>
+</Slot>
+
+<ShowTelecast rdf:about="#showtelecast13">
+  <rdf:type rdf:resource="http://www.w3.org/2002/07/owl#NamedIndividual"/>
+  <showReferred rdf:resource="#BB3"/>
+  <episodeNumber rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">2</episodeNumber>
+  <episodeDuration rdf:datatype="http://www.w3.org/2001/XMLSchema#integer">100</episodeDuration>
+</ShowTelecast>
+
+<owl:AllDisjointClasses>
+  <owl:members rdf:parseType="Collection">
+    <rdf:Description rdf:about="#Address"/>
+    <rdf:Description rdf:about="#Advertisement"/>
+    <rdf:Description rdf:about="#Brand"/>
+    <rdf:Description rdf:about="#Company"/>
+    <rdf:Description rdf:about="#ContactInfo"/>
+    <rdf:Description rdf:about="#MediaPlatform"/>
+    <rdf:Description rdf:about="#Name"/>
+    <rdf:Description rdf:about="#Person"/>
+    <rdf:Description rdf:about="#Product"/>
+    <rdf:Description rdf:about="#Show"/>
+    <rdf:Description rdf:about="#Slot"/>
+    <rdf:Description rdf:about="#Telecast"/>
+  </owl:members>
+</owl:AllDisjointClasses>
+
+
+</rdf:RDF>
